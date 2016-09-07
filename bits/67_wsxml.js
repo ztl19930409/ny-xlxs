@@ -67,12 +67,12 @@ function write_ws_xml_sheetpr(sheetpr) {
 	if(sheetpr.length == 0) return "";
 	var o = '<sheetPr>';
 	for(var i in sheetpr) {
-      for(var j in sheetpr[i]){
-        o += '<' + j;
-        for(var k in sheetpr[i][j])
-          o += ' ' + k + '="' + sheetpr[i][j][k] + '"';
+    for(var j in sheetpr[i]){
+      o += '<' + j;
+      for(var k in sheetpr[i][j])
+        o += ' ' + k + '="' + sheetpr[i][j][k] + '"';
       o += '/>'
-      }
+    }
   }
 	return o + '</sheetPr>';
 }
