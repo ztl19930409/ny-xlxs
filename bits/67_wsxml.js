@@ -63,6 +63,20 @@ function parse_ws_xml(data, opts, rels) {
 	return s;
 }
 
+function write_ws_xml_sheetpr(sheetpr) {
+	if(sheetpr.length == 0) return "";
+	var o = '<sheetPr>';
+	for(var i in sheetpr) {
+      for(var j in sheetpr[i]){
+        o += '<' + j;
+        for(var k in sheetpr[i][j])
+          o += ' ' + k + '="' + sheetpr[i][j][k] + '"';
+      o += '/>'
+      }
+  }
+	return o + '</sheetPr>';
+}
+
 function write_ws_xml_merges(merges) {
 	if(merges.length == 0) return "";
 	var o = '<mergeCells count="' + merges.length + '">';
@@ -304,8 +318,10 @@ function write_ws_xml(idx, opts, wb) {
 	var s = wb.SheetNames[idx], sidx = 0, rdata = "";
 	var ws = wb.Sheets[s];
 	if(ws === undefined) ws = {};
+	if(ws['!sheetPr'] !== undefined && ws['!sheetPr'].length > 0) o[o.length] = (write_ws_xml_sheetpr(ws['!sheetPr']));
 	var ref = ws['!ref']; if(ref === undefined) ref = 'A1';
 	o[o.length] = (writextag('dimension', null, {'ref': ref}));
+
 
   var sheetView = writextag('sheetView', null,  {
     showGridLines: opts.showGridLines == false ? '0' : '1',
