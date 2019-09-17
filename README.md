@@ -1,16 +1,15 @@
-# xlsx-style
+# ny-xlsx
 
 Parser and writer for various spreadsheet formats.  Pure-JS cleanroom implementation from official specifications and related documents.
 
 # About this fork
-**NOTE:** [This project](https://github.com/SheetJS/js-xlsx/tree/beta) is a fork of the original (and awesome) [SheetJS/xlsx](https://github.com/SheetJS/js-xlsx) project.
+**NOTE:** [This project](https://github.com/ztl19930409/ny-xlxs) is a fork of the original (and awesome) [protobi/js-xlsx](https://github.com/protobi/js-xlsx) project.
 It is extended to enable cell formats to be read from and written to .xlsx workbooks.
 The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
-Report any issues to https://github.com/protobi/js-xlsx/issues.
+Report any issues to https://github.com/ztl19930409/ny-xlxs/issues.
 
 For those contributing to this fork:
 * `master` is the main branch, which follows the original repo to enable a future pull request.
-* `beta` branch is published to npm and bower to make this fork available for use.
 
 # Supported formats
 
@@ -38,7 +37,7 @@ Source: <http://git.io/xlsx>
 With [npm](https://www.npmjs.org/package/xlsx-style):
 
 ```sh
-npm install xlsx-style --save
+npm install ny-xlsx --save
 ```
 
 In the browser:
@@ -49,9 +48,6 @@ In the browser:
 
 With [bower](http://bower.io/search/?q=js-xlsx):
 
-```sh
-bower install js-xlsx-style#beta
-```
 
 CDNjs automatically pulls the latest version and makes all versions available at
 <http://cdnjs.com/libraries/xlsx>
